@@ -1,14 +1,14 @@
 
 # Getting started with Chef and Knife (Chef-Solo) ... building a simple apache2 webserver
 
-I have been struggling a little bit with Gem Hell on my laptop (MacOSX) and prefer working with Vagrant and Linux as 
+I have been struggling a little bit with 'Ruby/Gem Version Hell' on my laptop (MacOSX) and prefer working with Vagrant and Linux as 
 
-  - This can be easily rebuilt in a 100% consistent maner
-  - No one is running MacOSX in production datacenters, it is 100% Linux
+  - This can be easily rebuilt in a 100% consistent maner (see blog post/link below for details)
+  - No one is running MacOSX in their production datacenters, it is 100% Linux ... I love MaxOSX but for really work I am a Linux fan boy ...
 
 So working through the following good article to get started with Chef and Knife: http://gettingstartedwithchef.com/first-steps-with-chef.html
 
-I ended up running using a trusty64 (14.04) Ubuntu box image. I also broke the process into a scripts/steps which where to be run as root:
+I ended up running using a trusty64 (14.04) Ubuntu box image. I also broke the setup process into a scripts/steps which where to be run as root:
 
 ```sh
 # startup and ssh to vagrant box:
@@ -29,8 +29,11 @@ Now the rest of the process is scripted
 chef-solo -c solo.rb -j web.json
 ```
 
-Please inspect the scripts for further details... this approach is a good sansity check for check new Linux images and working through Ruby Gem Hell issues... here is a short blog post about some of the issues I had:
+Please inspect these scripts (i.e. in this git repo) for further details..
 
+This approach is a good sansity check for check new Linux images and working through Ruby/Gem Version issues... here is a short blog post about some of the issues I had:
+
+http://dba-amsterdam.blogspot.nl/2015/08/learning-chef-and-ruby-version-pain.html
 
 Once you have this working, you should be able to mark a simple test call to Apache2 webserver:
 
@@ -48,7 +51,9 @@ on this server.</p>
 </body></html>
 ```
 
-Lastly, as I was cross-mounted vagrant directory, as this easier to inspect (and edit) e.g. via my personal favorite editor: sublime text. However this makes the rebuild process slightly more complicated i.e. you need to
+Lastly, as I was working under the cross-mounted /vagrant directory, as this easier to inspect (and edit) e.g. via my personal favorite editor: sublime text. 
+
+	However this makes the rebuild process slightly more complicated i.e. to completely rebuild the environment I needed to
   - destroy old box image
   - cleanup left over chef and knife (i.e. chef-solo) files under /vagrant
   - restart vagrant and ssh to nex box
