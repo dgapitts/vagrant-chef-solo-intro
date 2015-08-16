@@ -39,6 +39,7 @@ Once you have this working, you should be able to mark a simple test call to Apa
 
 ```sh
 root@knife1:/vagrant# curl http://localhost/index.htm
+
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
 <title>403 Forbidden</title>
@@ -51,9 +52,9 @@ on this server.</p>
 </body></html>
 ```
 
-Lastly, as I was working under the cross-mounted /vagrant directory, as this easier to inspect (and edit) e.g. via my personal favorite editor: sublime text. 
+OK ... displaying 'Hello Chef-Solo World' was my initial aim, but the key point is that Apache2 is up, running and complaining about suspect URL calls!
 
-	However this makes the rebuild process slightly more complicated i.e. to completely rebuild the environment I needed to
+Lastly, as I was working under the cross-mounted /vagrant directory, as this easier to inspect (and edit) e.g. via my personal favorite editor: sublime text. However this makes the rebuild process slightly more complicated i.e. to completely rebuild the environment I needed to
   - destroy old box image
   - cleanup left over chef and knife (i.e. chef-solo) files under /vagrant
   - restart vagrant and ssh to nex box
