@@ -19,6 +19,7 @@ vagrant ssh
 sudo -i
 cd /vagrant
 ```
+Note: I'm only running at root, as this is how the 'getting started with chef' tutorial was written. Some refactoring for better security could be done here...
 
 Now the rest of the process is scripted
 
@@ -62,7 +63,7 @@ Lastly, as I was working under the cross-mounted /vagrant directory, as this eas
 So I scripted this:
 
 ```sh
-~/projects/vagrant-knife $ cat rebuild.sh
+~/projects/vagrant-chef-solo-intro $ cat rebuild.sh
 vagrant destroy
 rm -rf chef-repo
 rm -rf chef-solo
