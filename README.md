@@ -1,5 +1,5 @@
 
-# Getting started with Chef and Knife (Chef-Solo) ... building a simple apache2 webserver
+# Getting started with Chef-Solo: deploying a simple apache2 webserver
 
 I have been struggling a little bit with 'Ruby/Gem Version Hell' on my laptop (MacOSX) and prefer working with Vagrant and Linux as 
 
